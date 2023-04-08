@@ -1,0 +1,49 @@
+.every {
+  width: 200px;
+  border-left: 1px solid rgba(24, 24, 32, 1);
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.every .every-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.every .every-top .top-text {
+  height: 33.04px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.every .every-top .top-image {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.every .every-top .top-image img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.every .input input {
+  width: 95%;
+  height: 23px;
+
+  background: transparent;
+  outline: none;
+  color: white;
+  border-radius: 30px;
+}

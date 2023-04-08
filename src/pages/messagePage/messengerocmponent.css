@@ -1,0 +1,18 @@
+.messenger {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 70%;
+  gap: 50px;
+  height: 100vh;
+
+  left: 475px;
+  margin-top: -3rem;
+}
+
+@media screen and (max-width: 1004px) {
+  .messenger {
+    left: 20px;
+  }
+}

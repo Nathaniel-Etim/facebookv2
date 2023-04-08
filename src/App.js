@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import NavSideBar from "./component/layout/navSideBar";
+import Feed from "./component/feed/feed";
+import MessageComponent from "./pages/messagePage/message";
+import UserProfileTop from "./component/userProfile/UserProfile";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<NavSideBar />}>
+      <Route index element={<Feed />} />
+      <Route path="messenger" element={<MessageComponent />} />
+      <Route path="userProfile" element={<UserProfileTop />} />
+    </Route>
+  )
+);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

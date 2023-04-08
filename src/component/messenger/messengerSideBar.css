@@ -1,0 +1,105 @@
+.messenger-sidebar {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  left: 290px;
+  right: 20px;
+  height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.messenger-sidebar .sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.messenger-sidebar .sidebar-top .top {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.messenger-sidebar .sidebar-top .top .logo {
+  width: 40px;
+  height: 40px;
+  /*  */
+}
+
+.messenger-sidebar .sidebar-top .top .sidebar-middle {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /*  */
+}
+
+.messenger-sidebar .sidebar-top .top .sidebar-middle .middle-items {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  gap: 10px;
+  /*  */
+}
+
+.messenger-sidebar .sidebar-top .top .sidebar-middle .middle-items .itemIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.messenger-sidebar .sidebar-top .top .sidebar-middle .middle-items span {
+  width: 105.3px;
+  /* height: 33.04px; */
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.messenger-sidebar .sidebar-top .bottom {
+  position: fixed;
+  width: 125px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.messenger-sidebar .sidebar-top .bottom img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1004px) {
+  .messenger-sidebar {
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .messenger-sidebar {
+    left: 10px;
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .messenger-sidebar .sidebar-top .top {
+    display: none;
+  }
+  .messenger-sidebar {
+    padding: 10px 5px;
+  }
+}
+
+@media screen and (max-width: 502px) {
+  .messenger-sidebar .sidebar-top .bottom {
+    display: none;
+  }
+}

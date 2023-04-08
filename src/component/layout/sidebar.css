@@ -1,0 +1,93 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-right: 1px solid rgba(24, 24, 32, 1);
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100vh;
+  z-index: 90;
+  /* display: none; */
+}
+
+.sidebar .sidebar-top {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  width: 262.93px;
+  height: 40px;
+  padding: 10px;
+  border-bottom: 2px solid rgba(39, 32, 32, 0.05);
+}
+
+.sidebar .sidebar-top .searchBar-section {
+  display: flex;
+  /* flex-direction: row; */
+}
+
+.sidebar .sidebar-top .searchBar-section .searchInput {
+  max-width: 180px;
+  height: 30.8px;
+  outline: none;
+  padding: 0 3px;
+  background-color: transparent;
+  border-radius: 15px;
+}
+
+.sidebar .sidebar-content {
+  overflow-y: scroll;
+  margin-bottom: 37px;
+}
+
+.sidebar .sidebar-content::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar .sidebar-content .side-items {
+  border-bottom: 2px solid rgba(24, 24, 32, 1);
+}
+
+.sidebar .sidebar-content .side-shortcut span {
+  width: 93px;
+  height: 16px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: rgba(255, 255, 255, 0.7);
+  padding: 5px 10px;
+}
+
+.sidebar .sidebar-bottom {
+  background-color: #1e1e1e;
+  position: fixed;
+  bottom: 0rem;
+  z-index: 5;
+}
+
+.sidebar .sidebar-bottom p {
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  max-width: 260px;
+  height: 24px;
+
+  color: rgba(255, 255, 255, 0.7);
+  padding: 3px;
+}
+
+@media screen and (max-width: 1004px) {
+  .sidebar {
+    display: none;
+  }
+}

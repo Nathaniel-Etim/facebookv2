@@ -1,0 +1,149 @@
+.chatsection {
+  width: 400px;
+  min-width: 150px;
+  border-left: 1px solid rgba(24, 24, 32, 1);
+  border-right: 1px solid rgba(24, 24, 32, 1);
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatsection .chat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chatsection .chat .chat-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatsection .chat .chat-top .top-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.chatsection .chat .chat-top .top-name span {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.chatsection .chat .chat-top .top-name img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.chatsection .chat .chat-top .chat-topicon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.chatsection .chat .chat-top .chat-topicon .topicons {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.chatsection .chat-bottom {
+  position: fixed;
+  bottom: 2px;
+  padding: 10px 0;
+  border-top: 1px solid rgb(161, 156, 156);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  z-index: 9;
+  width: 36%;
+  background-color: #1e1e1e;
+}
+
+.chatsection .chat-bottom .bottom-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.chatsection .chat-bottom .bottom-left .left-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.chatsection .chat-bottom input {
+  width: 50%;
+  height: 21.8px;
+  outline: none;
+  background: transparent;
+  border-radius: 19.9px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.chatsection .chat-bottom .bottom-righticon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+  .chatsection .chat-bottom {
+    width: 46%;
+  }
+}
+
+@media screen and (max-width: 751px) {
+  .chatsection .chat-bottom {
+    width: 52%;
+  }
+}
+@media screen and (max-width: 667px) {
+  .chatsection .chat-bottom {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 547px) {
+  /* .chatsection .chat-bottom .bottom-left .bottom-gallary {
+    display: none;
+  } */
+  .chatsection .chat-bottom .bottom-left .bottom-camera {
+    display: none;
+  }
+  .chatsection .chat-bottom .bottom-left .bottom-videocall {
+    display: none;
+  }
+  .chatsection {
+    width: 300px;
+  }
+  .chatsection .chat-bottom {
+    width: 52%;
+  }
+}
+
+@media screen and (max-width: 483px) {
+  .chatsection .chat-bottom input {
+    width: 80%;
+  }
+}

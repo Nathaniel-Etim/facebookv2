@@ -1,0 +1,170 @@
+.post-card {
+  width: 100%;
+}
+
+.post-card .post-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px 0 20px;
+  border-bottom: 2px solid rgba(39, 32, 32, 0.05);
+}
+
+.post-card .post-top .userdp {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #2374e1;
+  border-radius: 360px;
+}
+
+.post-card .post-top .postuser-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.post-card .post-top .postuser-details span {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  /* identical to box height */
+
+  color: #ffffff;
+}
+
+.post-card .post-top .postuser-details .post-undertext {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.post-card .post-top .postuser-details .post-undertext .globe {
+  width: 8.47px;
+  height: 8.47px;
+}
+
+.post-card .publishedItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.post-card .publishedItems .post-text {
+  padding: 5px 20px;
+  max-width: 570px;
+}
+
+.post-card .publishedItems .post-text span {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+
+  color: #ffffff;
+}
+
+.post-card .publishedItems .Publicationimg {
+  width: 100%;
+
+  max-width: 500px;
+  height: 261px;
+}
+
+.post-card .publishedItems .likeshare-container {
+  width: 90%;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 20px;
+
+  /* Inside auto layout */
+
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.post-card .publishedItems .likeshare-container .likearea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 5px;
+
+  width: 60px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.post-card .publishedItems .likeshare-container .likearea .lik {
+  width: 24px;
+  height: 24px;
+}
+
+.post-card .publishedItems .likeshare-container .likearea span {
+  width: 31px;
+  height: 16px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: center;
+
+  /* Secondary/Dust */
+
+  color: #c4c4c4;
+}
+
+.post-card .publishedItems .comment {
+  background: rgba(255, 255, 255, 0.05);
+  width: 100%;
+}
+
+.post-card .publishedItems .comment .PostYourMind-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  gap: 10px;
+  border-bottom: 2px solid rgba(39, 32, 32, 0.05);
+}
+.post-card .publishedItems .comment .PostYourMind-top .userImg {
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 375px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  cursor: pointer;
+}
+
+.post-card .publishedItems .comment .PostYourMind-top .commentInput {
+  width: 90%;
+  height: 25px;
+  outline: none;
+  background: transparent;
+  border-radius: 50px 70px 70px 0px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: rgba(255, 255, 255, 0.35);
+}

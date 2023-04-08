@@ -1,0 +1,127 @@
+.navbar-container {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60px;
+  right: 0;
+  top: 0px;
+  left: 17rem;
+  padding: 0px 20px;
+  background-color: #1e1e1e;
+  border-bottom: 1px solid rgba(39, 32, 32, 0.05);
+  z-index: 90;
+}
+
+.navbar-container .nav-cover {
+  gap: 80px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.navbar-container .nav-cover .nav-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+  /* width: 70%; */
+  position: absolute;
+  left: 5rem;
+}
+
+.navbar-container .nav-cover .nav-left .laft-item {
+  position: relative;
+  left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.navbar-container .nav-cover .nav-left .menu {
+  display: none;
+}
+
+.navbar-container .nav-cover .nav-left .laft-item .NavIcon {
+  fill: blue;
+  width: 30px;
+  height: 30px;
+}
+
+.navbar-container .nav-cover .nav-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-container .nav-cover .nav-right .right-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 30px; */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.navbar-container .nav-cover .nav-right .right-menu {
+  display: none;
+}
+
+.navbar-container .nav-cover .nav-right .right-item .right-icon {
+  height: 30px;
+  width: 30px;
+}
+
+@media screen and (max-width: 1004px) {
+  .navbar-container {
+    left: 0;
+  }
+  .navbar-container .nav-cover .nav-right .right-menu {
+    display: inline-flex;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .navbar-container .nav-cover .nav-left {
+    gap: 30px;
+    left: 3rem;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .navbar-container .nav-cover .nav-left .menu {
+    display: inline-block;
+    font-size: 10px;
+    width: 20px;
+  }
+  .navbar-container .nav-cover .nav-left .menu .right-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .navbar-container .nav-cover .nav-left .game {
+    display: none;
+  }
+  .navbar-container .nav-cover .nav-right .right-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 486px) {
+  .navbar-container .nav-cover .nav-left {
+    gap: 30px;
+    left: 0.7rem;
+  }
+  .navbar-container .nav-cover .nav-right .right-item .bell {
+    display: none;
+  }
+  .navbar-container .nav-cover .nav-right {
+    gap: 9px;
+  }
+}

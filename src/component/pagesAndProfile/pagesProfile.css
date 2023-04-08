@@ -1,0 +1,109 @@
+.pages-card {
+  width: 100%;
+  max-width: 250px;
+  min-width: 200px;
+}
+
+.pages-card .pager {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 10px 10px 20px;
+  max-width: 220px;
+  min-width: 110;
+}
+
+.pages-card .pager .pages-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pages-card .pager .pages-header span {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.pages-card .pager .pages-header {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+}
+
+.pages-card .pager .pages-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+}
+
+.pages-card .pager .pages-content .pages-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pages-card .pager .pages-content .pages-name .col2 .figmaicon {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 819px;
+}
+
+.pages-card .pager .pages-content .pages-name .col2 .text {
+  gap: 5px;
+  cursor: pointer;
+}
+
+.pages-card .pager .pages-content .pages-name .col2 .text span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pages-card .pager .pages-content .pages-name .col2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  /* width: 105px; */
+}
+
+.pages-card .pager .pages-content .pages-name .text .text1 {
+  width: 39px;
+  left: 1072.43px;
+  top: 176.14px;
+
+  font-family: "Roboto";
+  cursor: pointer;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #ffffff;
+}
+
+.pages-card .pager .pages-content .pages-name div .text2 {
+  width: 45px;
+  left: 1072.43px;
+  cursor: pointer;
+
+  top: 193.86px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 8px;
+
+  color: rgba(255, 255, 255, 0.6);
+}

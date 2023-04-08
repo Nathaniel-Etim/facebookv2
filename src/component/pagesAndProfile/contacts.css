@@ -1,0 +1,128 @@
+.contact-card {
+  width: 100%;
+  max-width: 250px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+
+.contact-card .contact-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-card .contact-top span {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-card .contact-top .contact-top-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.contact-card .contacts {
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-height: 209px;
+  min-height: 70px;
+  gap: 10px;
+}
+.contact-card .contacts::-webkit-scrollbar {
+  display: none;
+}
+
+.contact-card .contacts .contact-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.contact-card .contacts .seeMore {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-card .contacts .contact-bottom::-webkit-scrollbar {
+  display: none;
+}
+
+.contact-card .contacts .contact-bottom .my-contacts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-card .contacts .contact-bottom .my-contacts .contact-details {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.contact-card .contacts .contact-bottom .my-contacts .namemers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-card .contacts .contact-bottom .my-contacts .namemers .nameername {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-card .contacts .contact-bottom .my-contacts .namemers .nameerfriends {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 16px;
+
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-card .contacts .contact-bottom .chat {
+  width: 40px;
+  height: 40px;
+}
+
+.contact-card .contacts .contact-bottom .chat .message {
+  /*  */
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}

@@ -1,0 +1,25 @@
+.usersocial-container {
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-bottom: 1px solid   rgba(24, 24, 32, 1);
+  
+  gap: 13px;
+  width: 95%;
+}
+
+.usersocial-container .usersocial-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 12px;
+  /* identical to box height */
+
+  color: #ffffff;
+}

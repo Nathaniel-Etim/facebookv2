@@ -1,0 +1,54 @@
+.birthday-card {
+  width: 100%;
+  max-width: 250px;
+  min-width: 200px;
+  cursor: pointer;
+}
+
+.birthday-card .pager {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 10px 10px 20px;
+  max-width: 220px;
+  min-width: 110;
+  gap: 10px;
+}
+
+.birthday-card .pager .header {
+  width: 60px;
+  height: 16px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.birthday-card .pager .others {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.birthday-card .pager .others .cakeimag {
+  cursor: pointer;
+}
+
+.birthday-card .pager .others .text {
+  width: 80%;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.85);
+}

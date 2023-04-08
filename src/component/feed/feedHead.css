@@ -1,0 +1,157 @@
+.feedHeader-card {
+  width: 100%;
+  height: 250px;
+  min-width: 295px;
+}
+
+.feedHeader-card .feedHeader-top {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  padding: 15px 50px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(39, 32, 32, 0.05);
+}
+
+.feedHeader-card .feedHeader-top .feedHead-topstory {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  cursor: pointer;
+
+  color: #ffffff;
+}
+
+.feedHeader-card .feedHeader-top .feedHead-topreels {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.feedHeader-card .userStory-container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+  overflow-x: scroll;
+}
+
+.feedHeader-card .userStory-container::-webkit-scrollbar {
+  display: none;
+}
+
+.feedHeader-card .userStory-container .story-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.feedHeader-card .userStory-container .story-section .userstory-container {
+  width: 112.5px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 10px;
+  object-fit: cover;
+  position: relative;
+}
+
+.feedHeader-card .userStory-container .story-section .userstory-container span {
+  width: 112.5px;
+  height: 45px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(24, 24, 32, 0.9);
+  border-radius: 0px 0px 10px 10px;
+  cursor: pointer;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  /* identical to box height */
+
+  color: rgba(255, 255, 255, 0.9);
+
+  mix-blend-mode: normal;
+}
+
+.feedHeader-card .userStory-container .story-section .userstory-container img {
+  position: absolute;
+  bottom: 1.8rem;
+  cursor: pointer;
+}
+
+.feedHeader-card .userStory-container .story-section .otherstory-container {
+  width: 112.5px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-radius: 10px;
+  object-fit: cover;
+  position: relative;
+  cursor: pointer;
+}
+
+.feedHeader-card .userStory-container .story-section .otherstory-container img {
+  position: relative;
+  left: 10px;
+  top: 10px;
+
+  width: 25px;
+  height: 25px;
+  border-radius: 250px;
+  cursor: pointer;
+
+  border: 2px solid rgba(24, 24, 32, 0.8);
+}
+
+.feedHeader-card
+  .userStory-container
+  .story-section
+  .otherstory-container
+  span {
+  width: 112.5px;
+  height: 45px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+
+  border-radius: 0px 0px 10px 10px;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  /* identical to box height */
+
+  color: rgba(255, 255, 255, 0.9);
+
+  mix-blend-mode: normal;
+}
