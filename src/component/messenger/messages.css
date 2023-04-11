@@ -47,3 +47,9 @@
   color: white;
   border-radius: 30px;
 }
+
+@media screen and (max-width: 538px) {
+  .every {
+    width: 90%;
+  }
+}

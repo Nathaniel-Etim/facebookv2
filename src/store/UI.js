@@ -4,6 +4,8 @@ const UISTORE = createSlice({
   name: "UISTORE",
   initialState: {
     showSideBar: false,
+    hideContactSection: null,
+    hideChatSection: null,
   },
   reducers: {
     toggleSideBarHandeler(state) {
@@ -12,6 +14,14 @@ const UISTORE = createSlice({
 
     setSideBarToTrue(state) {
       state.showSideBar = true;
+    },
+
+    sethideContactSection(state, action) {
+      state.hideContactSection = action.payload;
+    },
+
+    setHideChatSection(state, action) {
+      state.hideChatSection = action.payload;
     },
   },
 });

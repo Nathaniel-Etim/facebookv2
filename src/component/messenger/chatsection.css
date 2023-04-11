@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 400px;
 }
 
 .chatsection .chat .chat-top {
@@ -19,13 +20,21 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
+}
+
+.chatsection .chat .chat-top .arrowleft {
+  color: blue;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
 }
 
 .chatsection .chat .chat-top .top-name {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .chatsection .chat .chat-top .top-name span {
@@ -69,8 +78,14 @@
   align-items: center;
   gap: 10px;
   z-index: 9;
-  width: 36%;
+  width: 30%;
   background-color: #1e1e1e;
+}
+
+@media screen and (max-width: 1117px) {
+  .chatsection .chat-bottom {
+    width: 40%;
+  }
 }
 
 .chatsection .chat-bottom .bottom-left {
@@ -108,6 +123,12 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 855px) {
+  .chatsection .chat-bottom {
+    width: 49%;
+  }
+}
+
 @media screen and (max-width: 850px) {
   .chatsection .chat-bottom {
     width: 46%;
@@ -119,6 +140,13 @@
     width: 52%;
   }
 }
+
+@media screen and (max-width: 689px) {
+  .chatsection .chat-bottom {
+    width: 64.5%;
+  }
+}
+
 @media screen and (max-width: 667px) {
   .chatsection .chat-bottom {
     width: 60%;
@@ -137,13 +165,13 @@
   .chatsection {
     width: 300px;
   }
-  .chatsection .chat-bottom {
+  /* .chatsection .chat-bottom {
     width: 52%;
-  }
+  } */
 }
 
 @media screen and (max-width: 483px) {
   .chatsection .chat-bottom input {
-    width: 80%;
+    width: 83.5%;
   }
 }

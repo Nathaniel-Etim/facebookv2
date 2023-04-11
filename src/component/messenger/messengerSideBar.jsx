@@ -10,10 +10,29 @@ import Logout from "../../props/messageing/Logout.svg";
 import Card from "../card/Card";
 import EveryMessenger from "./messages";
 import ChatSection from "./chatSection";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { uiStoreAction } from "../../store/UI";
 
 function MessageSideBar() {
+  const dispatch = useDispatch();
   const post = useSelector((store) => store.AllPost.CurrentAccount);
+
+  function OnHideContactSectionHandelerfn() {
+    if (window.innerWidth <= 538) {
+      dispatch(uiStoreAction.sethideContactSection(true));
+      dispatch(uiStoreAction.setHideChatSection(false));
+    } else if (window.innerWidth > 538) {
+      dispatch(uiStoreAction.sethideContactSection(true));
+      dispatch(uiStoreAction.setHideChatSection(true));
+    }
+  }
+
+  if (window.innerWidth > 538) {
+    dispatch(uiStoreAction.sethideContactSection(true));
+    dispatch(uiStoreAction.setHideChatSection(true));
+  }
+
+  window.addEventListener("resize", OnHideContactSectionHandelerfn);
 
   return (
     <Card className="messenger-sidebar">
