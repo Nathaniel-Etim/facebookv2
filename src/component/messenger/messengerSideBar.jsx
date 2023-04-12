@@ -8,39 +8,23 @@ import archiveIcon from "../../props/messageing/archiveIcon.svg";
 import documentforward from "../../props/messageing/documentforward.svg";
 import Logout from "../../props/messageing/Logout.svg";
 import Card from "../card/Card";
-import EveryMessenger from "./messages";
-import ChatSection from "./chatSection";
-import { useSelector, useDispatch } from "react-redux";
-import { uiStoreAction } from "../../store/UI";
+import { useSelector } from "react-redux";
+import { Outlet, useNavigate } from "react-router-dom";
 
 function MessageSideBar() {
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const post = useSelector((store) => store.AllPost.CurrentAccount);
 
-  function OnHideContactSectionHandelerfn() {
-    if (window.innerWidth <= 538) {
-      dispatch(uiStoreAction.sethideContactSection(true));
-      dispatch(uiStoreAction.setHideChatSection(false));
-    } else if (window.innerWidth > 538) {
-      dispatch(uiStoreAction.sethideContactSection(true));
-      dispatch(uiStoreAction.setHideChatSection(true));
-    }
+  function onShowChatUserHandeler() {
+    navigate("/messenger");
   }
-
-  if (window.innerWidth > 538) {
-    dispatch(uiStoreAction.sethideContactSection(true));
-    dispatch(uiStoreAction.setHideChatSection(true));
-  }
-
-  window.addEventListener("resize", OnHideContactSectionHandelerfn);
-
   return (
     <Card className="messenger-sidebar">
       <div className="sidebar-top">
         <div className="top">
           <img src={messenger} alt="messenger icon" className="logo" />
           <div className="sidebar-middle">
-            <div className="middle-items">
+            <div className="middle-items" onClick={onShowChatUserHandeler}>
               <img className="itemIcon" src={chat} alt="chat" />
               <span>Chat</span>
             </div>
@@ -67,8 +51,7 @@ function MessageSideBar() {
           <img src={Logout} alt="user-logout" />
         </div>
       </div>
-      <EveryMessenger />
-      <ChatSection />
+      <Outlet />
     </Card>
   );
 }

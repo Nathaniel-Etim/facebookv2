@@ -13,6 +13,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+  width: 110px;
 }
 
 .messenger-sidebar .sidebar-top .top {
@@ -22,8 +23,11 @@
 }
 
 .messenger-sidebar .sidebar-top .top .logo {
-  width: 40px;
-  height: 40px;
+  display: flex;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
   /*  */
 }
 
@@ -37,14 +41,16 @@
 .messenger-sidebar .sidebar-top .top .sidebar-middle .middle-items {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   gap: 10px;
   /*  */
 }
 
 .messenger-sidebar .sidebar-top .top .sidebar-middle .middle-items .itemIcon {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .messenger-sidebar .sidebar-top .top .sidebar-middle .middle-items span {
@@ -62,7 +68,7 @@
 
 .messenger-sidebar .sidebar-top .bottom {
   position: fixed;
-  width: 125px;
+  width: 88px;
   bottom: 10px;
   display: flex;
   flex-direction: row;
@@ -90,16 +96,7 @@
 }
 
 @media screen and (max-width: 759px) {
-  .messenger-sidebar .sidebar-top .top {
-    display: none;
-  }
   .messenger-sidebar {
     padding: 10px 5px;
-  }
-}
-
-@media screen and (max-width: 502px) {
-  .messenger-sidebar .sidebar-top .bottom {
-    display: none;
   }
 }

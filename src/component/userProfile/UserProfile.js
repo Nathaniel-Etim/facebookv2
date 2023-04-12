@@ -15,7 +15,7 @@ function UserProfileTop() {
   );
 
   function onMessageUserHandeler() {
-    navigate("/messenger");
+    navigate("/messenger/messages");
   }
 
   const profileContent = ProfileDetails?.profilecontent;

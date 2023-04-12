@@ -2,7 +2,7 @@ import React from "react";
 import "./contacts.css";
 import { useSelector, useDispatch } from "react-redux";
 import { postAction } from "../../store/postStore";
-import { uiStoreAction } from "../../store/UI";
+import { useNavigate } from "react-router-dom";
 
 let text = "Me : Hello world to u alj";
 let textNumber = 23;
@@ -12,19 +12,8 @@ if (text.length > textNumber) {
   text = text.slice(0, sliceAmount) + "...";
 }
 
-function OnHideContactSectionHandelerfn() {
-  if (window.innerWidth <= 538) {
-    textNumber = 40;
-    sliceAmount = 20;
-  } else if (window.innerWidth > 538) {
-    textNumber = 23;
-    sliceAmount = 10;
-  }
-}
-
-window.addEventListener("resize", OnHideContactSectionHandelerfn);
-
 function ChatContact() {
+  const navigate = useNavigate();
   const CurrentAccount = useSelector((store) => store.AllPost.CurrentAccount);
   const AllAccount = useSelector((store) => store.AllPost.accounts);
   const dispatch = useDispatch();
@@ -45,15 +34,7 @@ function ChatContact() {
           profileImg: el.profileImg,
         })
       );
-
-      //
-      if (window.innerWidth <= 538) {
-        dispatch(uiStoreAction.sethideContactSection(false));
-        dispatch(uiStoreAction.setHideChatSection(true));
-      } else if (window.innerWidth > 538) {
-        dispatch(uiStoreAction.sethideContactSection(true));
-        dispatch(uiStoreAction.setHideChatSection(true));
-      }
+      navigate("messages");
     }
 
     const active =
@@ -73,8 +54,6 @@ function ChatContact() {
       </div>
     );
   });
-
-  dispatch(uiStoreAction.sethideContactSection(true));
 
   return <div className="chatcontact">{ViewMessage}</div>;
 }

@@ -6,13 +6,22 @@
   padding: 0 10px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .chatsection .chat {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   max-width: 400px;
+}
+
+.chatsection .chat .chat-middle {
+  overflow: scroll;
+  /* max-width: 70vh; */
+}
+
+.chatsection .chat .chat-middle::-webkit-scrollbar {
+  display: none;
 }
 
 .chatsection .chat .chat-top {
@@ -21,6 +30,10 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  margin-top: -10px;
+  background-color: #1e1e1e;
+  height: 50px;
+  z-index: 999;
 }
 
 .chatsection .chat .chat-top .arrowleft {
@@ -84,7 +97,7 @@
 
 @media screen and (max-width: 1117px) {
   .chatsection .chat-bottom {
-    width: 40%;
+    width: 37%;
   }
 }
 
