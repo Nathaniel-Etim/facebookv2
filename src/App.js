@@ -11,6 +11,7 @@ import MessageComponent from "./pages/messagePage/message";
 import UserProfileTop from "./component/userProfile/UserProfile";
 import EveryMessenger from "./component/messenger/messages";
 import ChatSection from "./component/messenger/chatSection";
+import ReelsPage from "./pages/reelsPage/reelsContainer";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
         <Route path="messages" element={<ChatSection />} />
       </Route>
       <Route path="userProfile" element={<UserProfileTop />} />
+      <Route path="reels" element={<ReelsPage />} />
     </Route>
   )
 );

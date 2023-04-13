@@ -1,0 +1,13 @@
+.reelsContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 40%;
+
+  gap: 10px;
+  height: 100vh;
+
+  left: 320px;
+  margin-top: -3rem;
+}

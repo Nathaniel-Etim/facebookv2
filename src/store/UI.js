@@ -23,6 +23,10 @@ const UISTORE = createSlice({
     setHideChatSection(state, action) {
       state.hideChatSection = action.payload;
     },
+
+    setSideBarToFalse(state) {
+      state.showSideBar = false;
+    },
   },
 });
 

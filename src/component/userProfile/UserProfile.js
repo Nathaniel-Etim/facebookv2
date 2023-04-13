@@ -14,11 +14,15 @@ function UserProfileTop() {
     (store) => store.AllPost.CurrentAccountFriends
   );
 
+  const currentAccount = useSelector((store) => store.AllPost.CurrentAccount);
+
   function onMessageUserHandeler() {
     navigate("/messenger/messages");
   }
 
   const profileContent = ProfileDetails?.profilecontent;
+
+  const sameUser = currentAccount.name === ProfileDetails.name;
 
   return (
     <>
@@ -45,10 +49,14 @@ function UserProfileTop() {
           </div>
         </div>
         <div className="message-area">
-          <h3 className="message btn" onClick={onMessageUserHandeler}>
-            <BsMessenger />
-            message
-          </h3>
+          {sameUser ? (
+            <h3 className="message btn">Edit profile</h3>
+          ) : (
+            <h3 className="message btn" onClick={onMessageUserHandeler}>
+              <BsMessenger />
+              message
+            </h3>
+          )}
           <BsSaveFill className="icons saved" />
           <img src={icon} alt="icon " className="icons menu-" />
         </div>

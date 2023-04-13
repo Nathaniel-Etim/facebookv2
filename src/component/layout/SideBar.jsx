@@ -19,7 +19,7 @@ function SideBar() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    const checkWidth = setInterval(function () {
+    setInterval(function () {
       let width = window.innerWidth;
       if (width > 1003) {
         dispatch(uiStoreAction.setSideBarToTrue());

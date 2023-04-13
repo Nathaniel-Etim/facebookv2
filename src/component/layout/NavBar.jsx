@@ -36,7 +36,7 @@ function NavBar() {
 
           <div className="laft-item">
             <NavLink
-              to="/"
+              to="/reels"
               className={({ isActive }) => (isActive ? "active" : "notActive")}
               end
             >
