@@ -6,7 +6,6 @@ function ReelsPage() {
   return (
     <div className="reelsContainer">
       <ReelsContainer />
-      <ReelsContainer />
     </div>
   );
 }
