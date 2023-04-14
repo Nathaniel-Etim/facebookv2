@@ -19,7 +19,7 @@ function ReelsContainer() {
               <div className="details-image">
                 <img src={userDp} alt="user dp" className="image-dp" />
               </div>
-              <span> User Name </span>
+              <span> Nathaniel Etim </span>
             </div>
             <span className="area-text">
               {" "}
@@ -32,9 +32,6 @@ function ReelsContainer() {
             </div>
           </div>
           <div className="icons-area">
-            <div className="cam-section">
-              <img src={cameraIcon} alt="camera icon" className="area-icon" />
-            </div>
             <div className="reels-icon">
               <img src={Likeicon} alt="camera icon" className="area-icon" />
             </div>
