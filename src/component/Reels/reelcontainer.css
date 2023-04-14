@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 100%;
   gap: 5px;
+  background-color: #1e1e1e;
 }
 
 .reels-container .reel-item {
@@ -10,7 +11,7 @@
   flex-direction: row;
   height: 87.6vh;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover auto;
   background-position: center;
   align-items: flex-end;
   padding: 5px 10px;
@@ -22,6 +23,8 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 10px;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .reels-container .reel-item .reelspost-details .details-areas {
