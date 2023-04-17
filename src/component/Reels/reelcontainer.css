@@ -3,15 +3,17 @@
   flex-direction: column;
   width: 100%;
   gap: 5px;
-  background-color: #1e1e1e;
+  /* background-color: #1e1e1e; */
+  padding-bottom: 20px;
+  /* border: 2px solid #696969; */
 }
 
 .reels-container .reel-item {
   display: flex;
   flex-direction: row;
-  height: 87.6vh;
+  height: 87.5vh;
   background-repeat: no-repeat;
-  background-size: cover auto;
+  background-size: auto;
   background-position: center;
   align-items: flex-end;
   padding: 5px 10px;
