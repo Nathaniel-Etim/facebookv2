@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FBlogo from "../../props/FB-logo.png";
 import SearchIcon from "../../props/search-icon.png";
 import "./sidebar.css";
@@ -15,7 +15,10 @@ import { useSelector, useDispatch } from "react-redux";
 
 function SideBar() {
   const post = useSelector((store) => store.AllPost.CurrentAccount);
+  const allAccount = useSelector((store) => store.AllPost.accounts);
   const showMenu = useSelector((store) => store.Ui.showSideBar);
+  const [inputValue , setInputValue]=useState("")
+  const [allUsersName ,  setAllUserName] = useState([])
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -25,7 +28,27 @@ function SideBar() {
         dispatch(uiStoreAction.setSideBarToTrue());
       }
     }, 1000); //this is to check after every 1 sec
-  });
+
+    const accountNames = allAccount.map((element)=>{
+      return element.name
+    })
+
+    setAllUserName(accountNames)
+
+  },[allAccount]);
+
+
+function onSearchForUserHandelerFn (event){
+  setInputValue(event.target.value)
+
+  if (containsName){
+  //  the user details will be displayed 
+  }
+
+} 
+
+const containsName = allUsersName.some(name => inputValue.includes(name.split("")[0]));
+
 
   const sideBarItem = [
     {
@@ -111,9 +134,11 @@ function SideBar() {
           <img src={SearchIcon} alt="search" />
           <input
             type="text"
+            value={inputValue}
             placeholder="search facebook"
             className="searchInput"
             style={{ color: "white" }}
+            onChange={onSearchForUserHandelerFn}
           />
         </div>
       </div>

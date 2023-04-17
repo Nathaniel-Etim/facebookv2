@@ -61,7 +61,7 @@ const account2 = {
 const account3 = {
   name: "Andrew sauel",
   profileImg: account3Image,
-  friends: ["samuel etim", "joans mike", "Nathaniel Joseph"],
+  friends: ["samuel etim", "jonas mike", "Nathaniel Joseph"],
   profilecontent: {
     about: "i am a content creator and an event organizer",
     followers: 29,

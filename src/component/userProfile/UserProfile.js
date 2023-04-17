@@ -1,37 +1,41 @@
-import React from "react";
-import icon from "../../props/messageing/infocircle.png";
-import { BsSaveFill, BsMessenger } from "react-icons/bs";
-import UserSocialHandeler from "./UserSocialHandeler";
-import UserPhotoSection from "./photo";
-import "./userprofile.css";
-import { useNavigate } from "react-router-dom";
-import UserPost from "../feed/userPost";
-import { useSelector } from "react-redux";
+import React from "react"; // import the React library
+import icon from "../../props/messageing/infocircle.png"; // import an image file
+import { BsSaveFill, BsMessenger } from "react-icons/bs"; // import icons from the react-icons library
+import UserSocialHandeler from "./UserSocialHandeler"; // import a custom component
+import UserPhotoSection from "./photo"; // import a custom component
+import "./userprofile.css"; // import css styles from a local file
+import { useNavigate } from "react-router-dom"; // import a hook from the react-router-dom library
+import UserPost from "../feed/userPost"; // import a custom component
+import { useSelector } from "react-redux"; // import a hook from the react-redux library
 
 function UserProfileTop() {
-  const navigate = useNavigate();
+  // define a functional component
+  const navigate = useNavigate(); // initialize the 'navigate' variable with a hook
   const ProfileDetails = useSelector(
+    // initialize the 'ProfileDetails' variable with a hook
     (store) => store.AllPost.CurrentAccountFriends
   );
 
-  const currentAccount = useSelector((store) => store.AllPost.CurrentAccount);
+  const currentAccount = useSelector((store) => store.AllPost.CurrentAccount); // initialize the 'currentAccount' variable with a hook
 
   function onMessageUserHandeler() {
-    navigate("/messenger/messages");
+    // define a function
+    navigate("/messenger/messages"); // call the 'navigate' function
   }
 
-  const profileContent = ProfileDetails?.profilecontent;
+  const profileContent = ProfileDetails?.profilecontent; // use optional chaining to initialize the 'profileContent' variable
 
-  const sameUser = currentAccount.name === ProfileDetails.name;
+  const sameUser = currentAccount.name === ProfileDetails.name; // compare values and initialize the 'sameUser' variable
 
   return (
+    // render some JSX
     <>
       <div className="userprofile-container">
         <div className="userprofile-coverimage">
           <img
             src="https://images.unsplash.com/photo-1608408843596-b3119736057c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNvdmVyJTIwcGhvdG98ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
             alt="user dp"
-            className="cover-image"
+            className="cover-image" // add a className attribute
           />
         </div>
         <div className="about-user">
@@ -49,12 +53,11 @@ function UserProfileTop() {
           </div>
         </div>
         <div className="message-area">
-          {sameUser ? (
+          {sameUser ? ( // use conditional rendering to display different content
             <h3 className="message btn">Edit profile</h3>
           ) : (
             <h3 className="message btn" onClick={onMessageUserHandeler}>
               <BsMessenger />
-              message
             </h3>
           )}
           <BsSaveFill className="icons saved" />
@@ -72,4 +75,4 @@ function UserProfileTop() {
   );
 }
 
-export default UserProfileTop;
+export default UserProfileTop; // export the component for use in other files
