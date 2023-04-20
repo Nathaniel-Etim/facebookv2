@@ -118,6 +118,7 @@ const ALLUSERPOST = createSlice({
     accounts,
     CurrentAccount: [],
     CurrentAccountFriends: {},
+    searchedAccount: {},
   },
   reducers: {
     getCurrentAccountDetails(state, action) {
@@ -140,6 +141,24 @@ const ALLUSERPOST = createSlice({
           name: newItem.name,
           profileImg: newItem.profileImg,
           profilecontent: newItem.profilecontent,
+        };
+      }
+    },
+
+    validateSearchDetails(state, action) {
+      const searchedUser = action.payload;
+
+      const pickedFriends = state.accounts.find((element) => {
+        return element.name === searchedUser.name;
+      });
+
+      if (pickedFriends) {
+        // Add all matching users to the searchedAccount array
+        state.searchedAccount = {
+          id: searchedUser.id,
+          name: searchedUser.name,
+          profileImg: searchedUser.profileImg,
+          profilecontent: searchedUser.profilecontent,
         };
       }
     },

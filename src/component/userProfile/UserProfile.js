@@ -58,6 +58,7 @@ function UserProfileTop() {
           ) : (
             <h3 className="message btn" onClick={onMessageUserHandeler}>
               <BsMessenger />
+              <span>Messager</span>
             </h3>
           )}
           <BsSaveFill className="icons saved" />

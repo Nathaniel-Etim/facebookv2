@@ -105,9 +105,10 @@
   cursor: pointer;
 }
 
-.post-card .publishedItems .likeshare-container .likearea .lik {
-  width: 24px;
-  height: 24px;
+.post-card .publishedItems .likeshare-container .likearea .likk {
+  width: 20px;
+  height: 20px;
+  padding: 2px;
 }
 
 .post-card .publishedItems .likeshare-container .likearea span {

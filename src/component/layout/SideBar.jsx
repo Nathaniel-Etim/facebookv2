@@ -9,17 +9,21 @@ import MostRecent from "../../props/MostRecent.png";
 import group from "../../props/friends.png";
 import watch from "../../props/ReelsIcons.png";
 import iconUP from "../../props/upIcon.png";
+import { postAction } from "../../store/postStore";
 import { uiStoreAction } from "../../store/UI";
 import seeMoreIcon from "../../props/seeMoreIcon.png";
 import { useSelector, useDispatch } from "react-redux";
+import Searched from "../searched/searched";
 
 function SideBar() {
   const post = useSelector((store) => store.AllPost.CurrentAccount);
   const allAccount = useSelector((store) => store.AllPost.accounts);
   const showMenu = useSelector((store) => store.Ui.showSideBar);
-  const [inputValue , setInputValue]=useState("")
-  const [allUsersName ,  setAllUserName] = useState([])
+  const [inputValue, setInputValue] = useState("");
+
+  const [allUsersName, setAllUserName] = useState([]);
   const dispatch = useDispatch();
+  const [showSearchedUsers, setShowSearchUsers] = useState(false);
 
   React.useEffect(() => {
     setInterval(function () {
@@ -29,26 +33,43 @@ function SideBar() {
       }
     }, 1000); //this is to check after every 1 sec
 
-    const accountNames = allAccount.map((element)=>{
-      return element.name
-    })
+    const accountNames = allAccount.map((element) => {
+      return element.name;
+    });
 
-    setAllUserName(accountNames)
+    setAllUserName(accountNames);
+  }, [allAccount]);
 
-  },[allAccount]);
+  function onSearchForUserHandelerFn(event) {
+    const value = event.target.value;
 
+    setInputValue(value);
 
-function onSearchForUserHandelerFn (event){
-  setInputValue(event.target.value)
+    if (value === " " || value.length === 0) {
+      setShowSearchUsers(false);
+      return;
+    } else {
+      setShowSearchUsers(true);
+      const searchedUser = allAccount.find((element) =>
+        element.name.toLowerCase().startsWith(value.toLowerCase())
+      );
 
-  if (containsName){
-  //  the user details will be displayed 
+      if (searchedUser) {
+        dispatch(
+          postAction.validateSearchDetails({
+            id: searchedUser.name,
+            name: searchedUser.name,
+            profileImg: searchedUser.profileImg,
+            profilecontent: searchedUser.profilecontent,
+          })
+        );
+      }
+    }
   }
 
-} 
-
-const containsName = allUsersName.some(name => inputValue.includes(name.split("")[0]));
-
+  const containsName = allUsersName.some((name) =>
+    name.toLowerCase().startsWith(inputValue.toLowerCase())
+  );
 
   const sideBarItem = [
     {
@@ -142,6 +163,9 @@ const containsName = allUsersName.some(name => inputValue.includes(name.split(""
           />
         </div>
       </div>
+      {showSearchedUsers && (
+        <Searched clearValue={setInputValue} hideBar={setShowSearchUsers} />
+      )}
       <div className="sidebar-content">
         <div className="side-items">{items}</div>
         <div className="side-shortcut">

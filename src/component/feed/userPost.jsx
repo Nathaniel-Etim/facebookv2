@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./userPost.css";
 import Card from "../card/Card";
 import postImage from "../../props/postImage.png";
@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import Shareicon from "../../props/Shareicon.png";
 
 function UserPost() {
+  const [isLiked, setIsLiked] = useState(false);
   const postDetails = useSelector((store) => store.AllPost.CurrentAccount);
 
   return (
@@ -45,7 +46,7 @@ function UserPost() {
           />
           <div className="likeshare-container">
             <div className="likearea">
-              <img src={Likeicon} alt="like icon" className="likk" />
+              <img src={Likeicon} alt="like icon" className="likk isliked" />
               <span>Like</span>
             </div>{" "}
             <div className="likearea">

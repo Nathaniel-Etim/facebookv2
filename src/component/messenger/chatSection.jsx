@@ -36,7 +36,7 @@ function ChatSection() {
   }
 
   function returnToChatHandelerFn() {
-    navigate(-1);
+    navigate("/messenger");
   }
 
   return (
