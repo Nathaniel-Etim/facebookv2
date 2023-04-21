@@ -99,4 +99,7 @@
   .messenger-sidebar {
     padding: 10px 5px;
   }
+  .messenger-sidebar .sidebar-top {
+    display: none;
+  }
 }
