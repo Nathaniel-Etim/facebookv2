@@ -17,7 +17,7 @@
 
 .chatsection .chat .chat-middle {
   overflow: scroll;
-  /* max-width: 70vh; */
+  width: 100%;
 }
 
 .chatsection .chat .chat-middle::-webkit-scrollbar {
@@ -151,6 +151,10 @@
 @media screen and (max-width: 751px) {
   .chatsection .chat-bottom {
     width: 52%;
+  }
+
+  .chatsection {
+    width: 100%;
   }
 }
 
