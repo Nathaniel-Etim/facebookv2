@@ -14,6 +14,12 @@ function UserPost() {
   const [isLiked, setIsLiked] = useState(false);
   const postDetails = useSelector((store) => store.AllPost.CurrentAccount);
 
+  function onLikedItemHandelerfn() {
+    setIsLiked((previous) => !previous);
+  }
+
+  const likedBtn = isLiked ? "likk isliked" : "likk";
+
   return (
     <div style={{ width: "100%" }}>
       <Card className="post-card">
@@ -45,17 +51,22 @@ function UserPost() {
             className="Publicationimg"
           />
           <div className="likeshare-container">
-            <div className="likearea">
-              <img src={Likeicon} alt="like icon" className="likk isliked" />
-              <span>Like</span>
+            <div className="likearea" onClick={onLikedItemHandelerfn}>
+              <img src={Likeicon} alt="like icon" className={likedBtn} />
+              <span
+                className="area-text"
+                style={{ color: `${isLiked ? "blue" : "#c4c4c4"}` }}
+              >
+                Like
+              </span>
             </div>{" "}
             <div className="likearea">
               <img src={Commenticon} alt="like icon" className="likk" />
-              <span>Comment</span>
+              <span className="area-text">Comment</span>
             </div>{" "}
             <div className="likearea">
               <img src={Shareicon} alt="like icon" className="likk" />
-              <span>Share</span>
+              <span className="area-text">Share</span>
             </div>
           </div>
           <div className="comment">

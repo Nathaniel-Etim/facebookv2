@@ -28,6 +28,8 @@ function Feed() {
         <UserPost />
         <UserPost />
         <UserPost />
+        <UserPost />
+        <UserPost />
       </div>
       <div className="other-items">
         <PagesandProfile />
