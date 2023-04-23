@@ -14,11 +14,16 @@ import { uiStoreAction } from "../../store/UI";
 
 function NavBar() {
   const post = useSelector((store) => store.AllPost.CurrentAccount);
+  const isLogedIn = useSelector((store) => store.Ui.isLogedin);
   const dispatch = useDispatch();
 
   function onShowMenuHandeler() {
     dispatch(uiStoreAction.toggleSideBarHandeler());
   }
+
+  const goHome = isLogedIn ? "/userFeed" : "/";
+  const showReels = isLogedIn ? "/reels" : "/";
+  const goToMessenger = isLogedIn ? "messenger" : "/";
 
   return (
     <div className="navbar-container">
@@ -26,7 +31,7 @@ function NavBar() {
         <div className="nav-left">
           <div className="laft-item ">
             <NavLink
-              to="/"
+              to={goHome}
               className={({ isActive }) => (isActive ? "active" : "notActive")}
               end
             >
@@ -36,7 +41,7 @@ function NavBar() {
 
           <div className="laft-item">
             <NavLink
-              to="/reels"
+              to={showReels}
               className={({ isActive }) => (isActive ? "active" : "notActive")}
               end
             >
@@ -72,7 +77,7 @@ function NavBar() {
             />
           </div>
           <NavLink
-            to="messenger"
+            to={goToMessenger}
             className={({ isActive }) => (isActive ? "active" : "notActive")}
             end
           >

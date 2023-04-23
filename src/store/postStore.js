@@ -19,7 +19,7 @@ const account1 = {
   publication: {
     publicationImage: publicationImage,
     Text: "this text here is just a dummy text and will be edited in due time",
-    likes: 2,
+    likes: 38,
     Comment: {
       commentors: [],
       commentNumber: 5,
@@ -45,7 +45,7 @@ const account2 = {
   publication: {
     publicationImage: publicationImage,
     Text: "this text here is just a dummy text and will be edited in due time",
-    likes: 2,
+    likes: 94,
     Comment: {
       commentors: [],
       commentNumber: 5,
@@ -71,7 +71,7 @@ const account3 = {
   publication: {
     publicationImage: publicationImage,
     Text: "this text here is just a dummy text and will be edited in due time",
-    likes: 2,
+    likes: 4,
     Comment: {
       commentors: [],
       commentNumber: 5,
@@ -97,7 +97,7 @@ const account4 = {
   publication: {
     publicationImage: publicationImage,
     Text: "this text here is just a dummy text and will be edited in due time",
-    likes: 2,
+    likes: 9,
     Comment: {
       commentors: [],
       commentNumber: 5,
@@ -123,9 +123,15 @@ const ALLUSERPOST = createSlice({
   reducers: {
     getCurrentAccountDetails(state, action) {
       const username = action.payload;
-      state.CurrentAccount = state.accounts.find((el) => {
+      const aValidAccount = state.accounts.find((el) => {
         return el.name === username;
       });
+
+      if (aValidAccount) {
+        state.CurrentAccount = aValidAccount;
+      } else {
+        state.CurrentAccount = `login`;
+      }
     },
 
     toChatDetail(state, action) {
@@ -135,7 +141,14 @@ const ALLUSERPOST = createSlice({
         return element.name === newItem.name;
       });
 
-      if (pickedFriend) {
+      if (!pickedFriend) {
+        state.CurrentAccountFriends = {
+          id: `Login`,
+          name: `Login to continue`,
+          profileImg: `Login`,
+          profilecontent: `Login to continue`,
+        };
+      } else {
         state.CurrentAccountFriends = {
           id: newItem.id,
           name: newItem.name,

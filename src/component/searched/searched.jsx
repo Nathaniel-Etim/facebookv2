@@ -3,6 +3,7 @@ import "./searched.css";
 import { useDispatch, useSelector } from "react-redux";
 import { postAction } from "../../store/postStore";
 import { useNavigate } from "react-router-dom";
+import { uiStoreAction } from "../../store/UI";
 
 function Searched(props) {
   const dispatch = useDispatch();
@@ -15,6 +16,11 @@ function Searched(props) {
     dispatch(postAction.toChatDetail(searchedUserDetails));
     props.clearValue("");
     props.hideBar(false);
+
+    if (window.innerWidth < 1004) {
+      dispatch(uiStoreAction.setSideBarToFalse());
+    }
+
     navigate("/userProfile");
   }
 

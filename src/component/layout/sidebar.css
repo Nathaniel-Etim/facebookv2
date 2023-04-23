@@ -89,5 +89,6 @@
 @media screen and (max-width: 1004px) {
   .sidebar {
     display: none;
+    top: 55px;
   }
 }

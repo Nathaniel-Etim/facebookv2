@@ -6,6 +6,7 @@ const UISTORE = createSlice({
     showSideBar: false,
     hideContactSection: null,
     hideChatSection: null,
+    isLogedin: false,
   },
   reducers: {
     toggleSideBarHandeler(state) {
@@ -26,6 +27,10 @@ const UISTORE = createSlice({
 
     setSideBarToFalse(state) {
       state.showSideBar = false;
+    },
+
+    setIsLogin(state) {
+      state.isLogedin = !state.isLogedin;
     },
   },
 });

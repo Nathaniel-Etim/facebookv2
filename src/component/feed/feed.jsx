@@ -11,15 +11,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { postAction } from "../../store/postStore";
 
 function Feed() {
-  const post = useSelector((store) => store.AllPost.CurrentAccount);
-
-  const dispatch = useDispatch();
-
-  React.useEffect(() => {
-    dispatch(postAction.getCurrentAccountDetails("Andrew sauel"));
-  });
-
-  console.log(post);
   return (
     <div className="feed">
       <div className="feed-container">

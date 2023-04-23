@@ -12,13 +12,17 @@ import UserProfileTop from "./component/userProfile/UserProfile"; // import a cu
 import EveryMessenger from "./component/messenger/messages"; // import a custom component
 import ChatSection from "./component/messenger/chatSection"; // import a custom component
 import ReelsPage from "./pages/reelsPage/reelsContainer"; // import a custom component
+import LoginasUser from "./component/login/loginAsUser";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const router = createBrowserRouter(
   // create a browser router using the imported function
   createRoutesFromElements(
     // create routes from JSX elements using the imported function
     <Route path="/" element={<NavSideBar />}>
-      <Route index element={<Feed />} />
+      <Route index element={<LoginasUser />} />
+      <Route path="userFeed" element={<Feed />} />
       <Route path="messenger" element={<MessageComponent />}>
         <Route index element={<EveryMessenger />} />
         <Route path="messages" element={<ChatSection />} />

@@ -8,16 +8,26 @@ import archiveIcon from "../../props/messageing/archiveIcon.svg";
 import documentforward from "../../props/messageing/documentforward.svg";
 import Logout from "../../props/messageing/Logout.svg";
 import Card from "../card/Card";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Outlet, useNavigate } from "react-router-dom";
+import { postAction } from "../../store/postStore";
+import { uiStoreAction } from "../../store/UI";
 
 function MessageSideBar() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const post = useSelector((store) => store.AllPost.CurrentAccount);
 
   function onShowChatUserHandeler() {
     navigate("/messenger");
   }
+
+  function onLogUserOutHandelerFn() {
+    navigate("/");
+    dispatch(postAction.getCurrentAccountDetails(``));
+    dispatch(uiStoreAction.setIsLogin());
+  }
+
   return (
     <Card className="messenger-sidebar">
       <div className="sidebar-top">
@@ -48,7 +58,11 @@ function MessageSideBar() {
         </div>
         <div className="bottom">
           <img src={post.profileImg} alt="user-profile" />
-          <img src={Logout} alt="user-logout" />
+          <img
+            src={Logout}
+            alt="user-logout"
+            onClick={onLogUserOutHandelerFn}
+          />
         </div>
       </div>
       <Outlet />

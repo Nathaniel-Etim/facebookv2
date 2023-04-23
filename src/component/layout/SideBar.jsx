@@ -19,6 +19,8 @@ function SideBar() {
   const post = useSelector((store) => store.AllPost.CurrentAccount);
   const allAccount = useSelector((store) => store.AllPost.accounts);
   const showMenu = useSelector((store) => store.Ui.showSideBar);
+  const isLoggedIn = useSelector((store) => store.Ui.isLogedin);
+
   const [inputValue, setInputValue] = useState("");
 
   const [allUsersName, setAllUserName] = useState([]);
@@ -66,10 +68,6 @@ function SideBar() {
       }
     }
   }
-
-  const containsName = allUsersName.some((name) =>
-    name.toLowerCase().startsWith(inputValue.toLowerCase())
-  );
 
   const sideBarItem = [
     {
@@ -163,7 +161,7 @@ function SideBar() {
           />
         </div>
       </div>
-      {showSearchedUsers && (
+      {showSearchedUsers && isLoggedIn && (
         <Searched clearValue={setInputValue} hideBar={setShowSearchUsers} />
       )}
       <div className="sidebar-content">

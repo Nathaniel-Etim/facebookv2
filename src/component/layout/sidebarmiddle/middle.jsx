@@ -25,11 +25,11 @@ function MiddleSideBar({ id, text, icons }) {
         })
       );
 
-      dispatch(uiStoreAction.setSideBarToFalse());
-
+      if (window.innerWidth < 1002) {
+        dispatch(uiStoreAction.setSideBarToFalse());
+      }
       navigate("/userProfile");
     }
-    dispatch(uiStoreAction.setSideBarToFalse());
   }
 
   return (
