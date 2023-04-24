@@ -18,9 +18,15 @@ function UserProfileTop() {
 
   const currentAccount = useSelector((store) => store.AllPost.CurrentAccount); // initialize the 'currentAccount' variable with a hook
 
+  const userIsLogedIn = useSelector((store) => store.Ui.isLogedin);
+
   function onMessageUserHandeler() {
     // define a function
-    navigate("/messenger/messages"); // call the 'navigate' function
+    if (userIsLogedIn) {
+      navigate("/messenger/messages"); // call the 'navigate' function
+    } else {
+      navigate("/");
+    }
   }
 
   const profileContent = ProfileDetails?.profilecontent; // use optional chaining to initialize the 'profileContent' variable
@@ -64,13 +70,17 @@ function UserProfileTop() {
           <BsSaveFill className="icons saved" />
           <img src={icon} alt="icon " className="icons menu-" />
         </div>
-        <UserSocialHandeler />
-        <UserPhotoSection />
-        <UserPost />
-        <UserPost />
-        <UserPost />
-        <UserPost />
-        <UserPost />
+        {userIsLogedIn && (
+          <>
+            <UserSocialHandeler />
+            <UserPhotoSection />
+            <UserPost />
+            <UserPost />
+            <UserPost />
+            <UserPost />
+            <UserPost />
+          </>
+        )}
       </div>
     </>
   );

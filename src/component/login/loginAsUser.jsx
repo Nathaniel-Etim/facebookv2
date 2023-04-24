@@ -9,9 +9,22 @@ import { useNavigate } from "react-router-dom";
 
 function LoginasUser() {
   const users = useSelector((store) => store.AllPost.accounts);
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    function handelBeforeUpload(event) {
+      event.preventDefault();
+      event.returnValue = " ";
+      navigate("/");
+    }
+
+    window.addEventListener("beforeinput", handelBeforeUpload);
+
+    return () => {
+      window.removeEventListener("beforeinput", handelBeforeUpload);
+    };
+  }, []);
 
   const allAccount = users.map((element) => {
     function onLoginUserHandelerfn() {

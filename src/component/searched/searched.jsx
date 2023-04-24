@@ -8,6 +8,7 @@ import { uiStoreAction } from "../../store/UI";
 function Searched(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const searchedUserDetails = useSelector(
     (store) => store.AllPost.searchedAccount
   );
@@ -15,6 +16,7 @@ function Searched(props) {
   function OnGoToUserProfileHandelerFn() {
     dispatch(postAction.toChatDetail(searchedUserDetails));
     props.clearValue("");
+
     props.hideBar(false);
 
     if (window.innerWidth < 1004) {
