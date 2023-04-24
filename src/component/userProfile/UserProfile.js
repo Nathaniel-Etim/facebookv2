@@ -6,15 +6,25 @@ import UserPhotoSection from "./photo"; // import a custom component
 import "./userprofile.css"; // import css styles from a local file
 import { useNavigate } from "react-router-dom"; // import a hook from the react-router-dom library
 import UserPost from "../feed/userPost"; // import a custom component
-import { useSelector } from "react-redux"; // import a hook from the react-redux library
+import { useDispatch, useSelector } from "react-redux"; // import a hook from the react-redux library
+import logoutIcon from "../../props/messageing/Logout.svg";
+import { postAction } from "../../store/postStore";
+import { uiStoreAction } from "../../store/UI";
 
 function UserProfileTop() {
+  const dispatch = useDispatch();
   // define a functional component
   const navigate = useNavigate(); // initialize the 'navigate' variable with a hook
   const ProfileDetails = useSelector(
     // initialize the 'ProfileDetails' variable with a hook
     (store) => store.AllPost.CurrentAccountFriends
   );
+
+  function onLogUserOutHandeler() {
+    navigate("/");
+    dispatch(postAction.getCurrentAccountDetails(``));
+    dispatch(uiStoreAction.setIsLogin());
+  }
 
   const currentAccount = useSelector((store) => store.AllPost.CurrentAccount); // initialize the 'currentAccount' variable with a hook
 
@@ -68,7 +78,16 @@ function UserProfileTop() {
             </h3>
           )}
           <BsSaveFill className="icons saved" />
-          <img src={icon} alt="icon " className="icons menu-" />
+          {sameUser ? (
+            <img
+              src={logoutIcon}
+              alt="icon "
+              className="icons menu-"
+              onClick={onLogUserOutHandeler}
+            />
+          ) : (
+            <img src={icon} alt="icon " className="icons menu-" />
+          )}
         </div>
         {userIsLogedIn && (
           <>
